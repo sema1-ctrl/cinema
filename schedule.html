@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кинотеатр "Фиолетовый экран" - Расписание</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Стили только для страницы расписания */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .movie-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .movie-info {
+            padding: 20px;
+        }
+
+        .movie-title {
+            color: #2d0b5f;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .movie-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .movie-sessions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .session-time {
+            background-color: #8a2be2;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .session-time:hover {
+            background-color: #e83e8c;
+            transform: scale(1.05);
+        }
+
+        .movie-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            color: #5a2a9e;
+            font-size: 0.9rem;
+        }
+
+        .day-filter {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .day-btn {
+            background-color: white;
+            border: 2px solid #8a2be2;
+            color: #8a2be2;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .day-btn.active, .day-btn:hover {
+            background-color: #8a2be2;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационное меню -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-film"></i>
+                    Фиолетовый экран
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="schedule.html" class="active"><i class="fas fa-calendar-alt"></i> Расписание</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-images"></i> Галерея</a></li>
+                    <li><a href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="container">
+        <h1><i class="fas fa-calendar-alt"></i> Расписание сеансов</h1>
+        <p style="text-align: center;">Выберите фильм и удобное время для просмотра. Билеты можно приобрести онлайн или в кассе кинотеатра.</p>
+        
+        <div class="day-filter">
+            <button class="day-btn active">Сегодня</button>
+            <button class="day-btn">Завтра</button>
+            <button class="day-btn">Пятница</button>
+            <button class="day-btn">Суббота</button>
+            <button class="day-btn">Воскресенье</button>
+        </div>
+        
+        <div class="schedule-grid">
+            <!-- Фильм 1 -->
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Аватар 2" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Аватар: Путь воды</h3>
+                    <p class="movie-description">Фантастический боевик, продолжение истории об exploration Пандоры. Джейк Салли и Нейтири защищают свой дом от новой угрозы.</p>
+                    <div class="movie-details">
+                        <span><i class="fas fa-clock"></i> 192 мин</span>
+                        <span><i class="fas fa-ticket-alt"></i> 12+</span>
+                        <span><i class="fas fa-star"></i> 8.1/10</span>
+                    </div>
+                    <div class="movie-sessions">
+                        <a href="#" class="session-time">10:30</a>
+                        <a href="#" class="session-time">13:45</a>
+                        <a href="#" class="session-time">17:00</a>
+                        <a href="#" class="session-time">20:15</a>
+                        <a href="#" class="session-time">23:30</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Фильм 2 -->
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Оппенгеймер" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Оппенгеймер</h3>
+                    <p class="movie-description">Биографический триллер о жизни физика-теоретика Роберта Оппенгеймера и его роли в создании первой атомной бомбы.</p>
+                    <div class="movie-details">
+                        <span><i class="fas fa-clock"></i> 180 мин</span>
+                        <span><i class="fas fa-ticket-alt"></i> 18+</span>
+                        <span><i class="fas fa-star"></i> 8.5/10</span>
+                    </div>
+                    <div class="movie-sessions">
+                        <a href="#" class="session-time">11:00</a>
+                        <a href="#" class="session-time">14:30</a>
+                        <a href="#" class="session-time">18:00</a>
+                        <a href="#" class="session-time">21:30</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Фильм 3 -->
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1595769812725-4c6564f7528b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Дюна 2" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Дюна: Часть вторая</h3>
+                    <p class="movie-description">Продолжение эпической саги о Пол Атрейдесе, который объединяется с фрименами для мести за уничтожение своего рода.</p>
+                    <div class="movie-details">
+                        <span><i class="fas fa-clock"></i> 166 мин</span>
+                        <span><i class="fas fa-ticket-alt"></i> 16+</span>
+                        <span><i class="fas fa-star"></i> 8.7/10</span>
+                    </div>
+                    <div class="movie-sessions">
+                        <a href="#" class="session-time">12:15</a>
+                        <a href="#" class="session-time">15:45</a>
+                        <a href="#" class="session-time">19:15</a>
+                        <a href="#" class="session-time">22:45</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Фильм 4 -->
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Барби" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Барби</h3>
+                    <p class="movie-description">Комедийный фильм о кукле Барби, которая из-за кризиса личности отправляется в реальный мир, чтобы найти настоящее счастье.</p>
+                    <div class="movie-details">
+                        <span><i class="fas fa-clock"></i> 114 мин</span>
+                        <span><i class="fas fa-ticket-alt"></i> 12+</span>
+                        <span><i class="fas fa-star"></i> 7.8/10</span>
+                    </div>
+                    <div class="movie-sessions">
+                        <a href="#" class="session-time">10:00</a>
+                        <a href="#" class="session-time">12:30</a>
+                        <a href="#" class="session-time">15:00</a>
+                        <a href="#" class="session-time">17:30</a>
+                        <a href="#" class="session-time">20:00</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Фильм 5 -->
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Миссия невыполнима" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Миссия невыполнима 7</h3>
+                    <p class="movie-description">Итан Хант и его команда IMF должны найти опасное оружие, которое может уничтожить все человечество.</p>
+                    <div class="movie-details">
+                        <span><i class="fas fa-clock"></i> 163 мин</span>
+                        <span><i class="fas fa-ticket-alt"></i> 16+</span>
+                        <span><i class="fas fa-star"></i> 8.0/10</span>
+                    </div>
+                    <div class="movie-sessions">
+                        <a href="#" class="session-time">13:00</a>
+                        <a href="#" class="session-time">16:15</a>
+                        <a href="#" class="session-time">19:30</a>
+                        <a href="#" class="session-time">22:45</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <p>Кинотеатр "Фиолетовый экран" &copy; 2023. Все права защищены.</p>
+            <p>Адрес: ул. Кинотеатральная, 15 | Телефон: +7 (123) 456-78-90</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Скрипт для фильтрации по дням
+        document.querySelectorAll('.day-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.day-btn').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
