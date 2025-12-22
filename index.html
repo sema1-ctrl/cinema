@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кинотеатр "Фиолетовый экран" - Главная</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Стили только для главной страницы */
+        .schedule-preview {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .movie-preview {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+        }
+        
+        .preview-item {
+            min-width: 200px;
+            text-align: center;
+        }
+        
+        .preview-poster {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .preview-poster:hover {
+            transform: scale(1.05);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #8a2be2, #e83e8c);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационное меню -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-film"></i>
+                    Фиолетовый экран
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i> Расписание</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-images"></i> Галерея</a></li>
+                    <li><a href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Основное содержимое -->
+    <main class="container">
+        <div class="hero">
+            <h1>Кинотеатр "Фиолетовый экран"</h1>
+            <p>Погрузитесь в мир кино в нашем современном кинокомплексе с комфортабельными залами и превосходным качеством изображения и звука.</p>
+            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="Кинотеатр" class="cinema-image">
+        </div>
+        
+        <h2>Почему выбирают нас?</h2>
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-couch"></i>
+                <h3>Комфортные кресла</h3>
+                <p>Удобные кресла с откидной спинкой и подставками для напитков обеспечивают максимальный комфорт во время просмотра.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-volume-up"></i>
+                <h3>Превосходный звук</h3>
+                <p>Система Dolby Atmos создает эффект полного погружения в фильм с объемным трехмерным звуком.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-ticket-alt"></i>
+                <h3>Удобная бронь</h3>
+                <p>Бронируйте билеты онлайн или через мобильное приложение. Выбирайте любимые места заранее.</p>
+            </div>
+        </div>
+        
+        <div class="schedule-preview">
+            <h2>Скоро в кино</h2>
+            <div class="movie-preview">
+                <div class="preview-item">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Фильм 1" class="preview-poster">
+                    <p>Аватар: Путь воды</p>
+                </div>
+                <div class="preview-item">
+                    <img src="https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Фильм 2" class="preview-poster">
+                    <p>Оппенгеймер</p>
+                </div>
+                <div class="preview-item">
+                    <img src="https://images.unsplash.com/photo-1595769812725-4c6564f7528b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Фильм 3" class="preview-poster">
+                    <p>Дюна: Часть вторая</p>
+                </div>
+                <div class="preview-item">
+                    <img src="https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Фильм 4" class="preview-poster">
+                    <p>Барби</p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="schedule.html" class="btn"><i class="fas fa-calendar-alt"></i> Посмотреть все сеансы</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <p>Кинотеатр "Фиолетовый экран" &copy; 2023. Все права защищены.</p>
+            <p>Адрес: ул. Кинотеатральная, 15 | Телефон: +7 (123) 456-78-90</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
