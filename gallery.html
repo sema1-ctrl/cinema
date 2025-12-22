@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кинотеатр "Фиолетовый экран" - Галерея</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Стили только для страницы галереи */
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 250px;
+            cursor: pointer;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(45, 11, 95, 0.8);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .category-btn {
+            background-color: white;
+            border: 2px solid #8a2be2;
+            color: #8a2be2;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn.active, .category-btn:hover {
+            background-color: #8a2be2;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационное меню -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-film"></i>
+                    Фиолетовый экран
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i> Расписание</a></li>
+                    <li><a href="gallery.html" class="active"><i class="fas fa-images"></i> Галерея</a></li>
+                    <li><a href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="container">
+        <h1><i class="fas fa-images"></i> Галерея кинотеатра</h1>
+        <p style="text-align: center;">Фотографии наших залов, мероприятий и особых событий. Приходите и убедитесь в комфорте нашего кинотеатра!</p>
+        
+        <div class="category-filter">
+            <button class="category-btn active">Все фото</button>
+            <button class="category-btn">Залы</button>
+            <button class="category-btn">Мероприятия</button>
+            <button class="category-btn">Премиум-зал</button>
+            <button class="category-btn">Кафе и бар</button>
+        </div>
+        
+        <div class="gallery-section">
+            <h2>Наши залы</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Зал 1" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Основной зал</h3>
+                        <p>Вместимость: 250 мест</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Зал 2" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Зал IMAX</h3>
+                        <p>Экран 22×16 метров</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Зал 3" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Премиум-зал</h3>
+                        <p>Кожаные кресла с откидной спинкой</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="gallery-section">
+            <h2>Мероприятия</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1492684223066-dd23140edf6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Мероприятие 1" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Премьера фильма "Аватар"</h3>
+                        <p>Декабрь 2022</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Мероприятие 2" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Кинофестиваль</h3>
+                        <p>Октябрь 2023</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=
